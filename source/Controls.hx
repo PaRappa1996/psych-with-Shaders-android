@@ -404,7 +404,6 @@ class Controls extends FlxActionSet
 		inline forEachBound(Control.NOTE_LEFT, (action, state) -> addbuttonuNOTES(action, hitbox.buttonLeft, state));
 		inline forEachBound(Control.NOTE_RIGHT, (action, state) -> addbuttonuNOTES(action, hitbox.buttonRight, state));	
 	}
-	#end
 	
 	public function setVirtualPadNOTES(virtualPad:FlxVirtualPad, ?DPad:FlxDPadMode, ?Action:FlxActionMode) 
 	{
@@ -519,7 +518,7 @@ class Controls extends FlxActionSet
 			case NONE:
 		}
 	}
-	
+	#end
 
 	public function removeFlxInput(Tinputs) {
 		for (action in this.digitalActions)
