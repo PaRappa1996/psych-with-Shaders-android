@@ -11,8 +11,10 @@ import flixel.input.gamepad.FlxGamepadButton;
 import flixel.input.gamepad.FlxGamepadInputID;
 import flixel.input.keyboard.FlxKey;
 import flixel.group.FlxGroup;
+#if android
 import ui.Hitbox;
 import ui.FlxVirtualPad;
+#end
 import flixel.ui.FlxButton;
 
 #if (haxe >= "4.0.0")
@@ -394,6 +396,7 @@ class Controls extends FlxActionSet
 		action.add(input);
 	}
 	
+	#if android
 	public function setHitBoxNOTES(hitbox:Hitbox) 
 	{
 		inline forEachBound(Control.NOTE_UP, (action, state) -> addbuttonuNOTES(action, hitbox.buttonUp, state));
@@ -401,6 +404,7 @@ class Controls extends FlxActionSet
 		inline forEachBound(Control.NOTE_LEFT, (action, state) -> addbuttonuNOTES(action, hitbox.buttonLeft, state));
 		inline forEachBound(Control.NOTE_RIGHT, (action, state) -> addbuttonuNOTES(action, hitbox.buttonRight, state));	
 	}
+	#end
 	
 	public function setVirtualPadNOTES(virtualPad:FlxVirtualPad, ?DPad:FlxDPadMode, ?Action:FlxActionMode) 
 	{
